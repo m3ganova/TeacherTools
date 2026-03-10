@@ -12,3 +12,14 @@ Optimized code and removed unnecessary comments (including unnecessary commented
 Upcoming Features - 
 
 Make the program end manually with a command from the user.
+
+Teacher Tools Light version 1.01 -
+
+New Features - 
+
+Removed all the extra prompts and made it immediately ask for a command.
+Program now ends manually with the tt--x command, however, it may bug out and you will have to repeat
+the command.
+Removed other unnecessary things, might have not removed all of the bloat however.
+Improved visibility a tad bit.
+Fixed the README.md being unorganized.
