@@ -25,4 +25,4 @@ Fix the version "up to date" notification being buggy.
 
 m3ganova NOTE:
 
-I don't know if I want to implement the calculator in this version.
+I don't know if I want to implement the calculator in this version. I will, however, consider it.
