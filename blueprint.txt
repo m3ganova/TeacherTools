@@ -14,16 +14,31 @@ Minor Goals -
 VERSION 1.02 -
 
 Major Goals - 
-Try to make everything a while true loop.
-
-Optimize the entire thing more (eg. while true loop).
+!Try to make everything a while true loop.
+--Add a calculator.
+--Optimize the entire thing more and make some commands simpler.
 
 Bug Fixes - 
 
-Fix the tt--x having to be entered twice at times. I have no idea what causes this.
-Fix the version "up to date" notification being buggy.
+!Fix the tt--x having to be entered twice at times. I think this is caused by my recursion.
+--Fix the version "up to date" notification being buggy. This was being caused by me accidentally 
+putting one equal sign instead of two (changing the variable's value vs actually comparing it 
+and checking it).
+--Fix some small things that get under my skin (example is forgetting a '\n').
+--Fix the version number. (Now that I come to think of it, making the program say: you are updated
+to the latest version every version is ludicrous. For now, I will comment out the "latest version" 
+message.)
 
 m3ganova NOTE:
 
 I don't know if I want to implement the calculator in this version. I will, however, consider it.
-I am adding this line of text as a test so ignore it please.
+I am adding this line of text as a test so ignore it please. 
+Future me: I added the calculator lol. Also, my journey with C so far has been painful.
+
+VERSION 1.03 - 
+
+Major Goals - 
+
+Bug Fixes - 
+
+Make the version say it is the latest version only on the latest version.

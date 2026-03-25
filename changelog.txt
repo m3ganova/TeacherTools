@@ -23,3 +23,15 @@ the command.
 Removed other unnecessary things, might have not removed all of the bloat however.
 Improved visibility a tad bit.
 Fixed the README.md being unorganized.
+
+Teacher Tools Light version 1.02 - 
+
+New Features - 
+
+Added a calculator. Use --calc or calculator to access it.
+Changed some commands to be easier to write. Also added commands on top of existing commands. Example:
+tool--mk -> --mk / mark.
+
+Bug Fixes - 
+
+Fixed some minor things.

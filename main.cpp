@@ -8,8 +8,8 @@
 #include <thread>
 
 /* SYSTEM VARIBLES */
-std::string version = "1.00";
-bool isLatestVersion = false;
+std::string version = "1.02";
+bool isLatestVersion = true;
 std::string versionMessage = "oi oi oi";
 /* GLOBAL VARIABLES */
 std::string command;
@@ -67,61 +67,90 @@ void markingTests(){
               << '\n';
             enterCommand();
 }
+void CalculatorTool(){
+
+    double x;
+    std::string operatorX = "+";
+    double y;
+
+//Asking the user for input and explaining the input
+
+    std::cout << "Enter what you want to calculate. Format is: operand operator operand and " <<
+    "add a space / enter in between." << '\n';
+    std::cin >> x >> operatorX >> y;
+        if (operatorX == "+" ){
+            std::cout << "The result is: " << x + y << "." << '\n';
+            enterCommand();
+        }
+        else if (operatorX == "-"){
+            std::cout << "The result is: " << x - y << "." << '\n' ;
+            enterCommand();
+        }
+        else if(operatorX == "*"){
+            std::cout << "The result is: " << x * y << "." << '\n';
+            enterCommand();
+        }
+        else if(operatorX == "/"){
+            std::cout << "The result is: " << x / y << "."<< '\n' ;
+            enterCommand();
+        }
+        else if(operatorX != "+" || operatorX != "-" || operatorX != "*" || operatorX != "/" ){
+std::cout << "Properly enter what you want to calculate. Format is: operand operator operand and " <<
+"add a space / enter in between." << '\n';
+    std::cin >> x >> operatorX >> y;
+        }
+}
 // See Commands [Add more commands] 
 void allCommands(){
-    std::cout << '\n' << "All Commands:" << '\n' << '\n'  << "tt--v / tt--version:" 
+    std::cout << '\n' << "All Commands:" << '\n' << '\n'  << "tt--v / --version: " 
               << "View Teacher Tools version."
-              << '\n' << "tt--h / tt--help: View all commands." << '\n' <<
-              "tt--x / tt--exit: Close the program.";
-    std::cout <<  '\n' << '\n' << "Tools: " << '\n' << '\n'  << "tool--gg :  Grade Generator -" <<
+              << '\n' << "tt--h / --help: View all commands." << '\n' <<
+              "tt--x / --exit: Close the program.";
+std::cout <<  '\n' << '\n' << "Tools: " << '\n' << '\n'  << " --gg / grade :  Grade Generator -"<<
             " Outputs a letter depending on the student's percentage grade." << "\n" 
-            << "tool--mk : Marking Tests - Marks a test and outputs" <<
-            " the marks earned and percentage grade." << '\n' << '\n';
+            << " --mk / mark : Marking Tests - Marks a test and outputs" <<
+            " the marks earned and percentage grade." << '\n' << " --calc / calculator : Calculator - "
+            << "Calculates your equation." << '\n';
             enterCommand();
 }
 
 int enterCommand(){
     std::cout << "Enter a command: ";
     std::cin >> command;
+    // Initializing
+     
     // Tools
-    if (command == "tool--gg"){
+    if (command == "--gg" || command == "grade" || command == "Grade"){
         declaringGrades();
-        }   else if (command == "tool--mk" || command == "b"){
+        }   else if (command == "--mk" || command == "Mark" || command == "mark"){
             markingTests();
         }
-        else if (command == "tt--h" || command == "tt--help"){
+        else if (command == "tt--h" || command == "--help"){
             std::cout << "Commands:" << '\n';
             allCommands();
             enterCommand();
         }
+        else if (command == "--calc" || command == "calculator" || command == "Calculator"){
+            CalculatorTool();
+        }
         // CLI Commands
-        else if (command == "tt--v" || command == "tt--version"){
-            // Getting version notification to update depending on version
-            
-            if (isLatestVersion = true){
-                versionMessage = ". You are updated to the latest version.";
-                // std::cout << isLatestVersion;
-            } 
-            
-            if (isLatestVersion = false) {
-                versionMessage = ". You are on an outdated version. It is recommended you update.";
-            }
-            // Displaying version
+        else if (command == "tt--v" || command == "--version"){
+        
+            // Displaying version (Will make it tell you if you need to update another time.)
             std::cout << "The current Teacher Tools Light Program Version is " <<  version 
-            << versionMessage << '\n';
+            /* << versionMessage */ << "."<< '\n';
             
             enterCommand();
         }
-        else if (command == "tt--h" || command == "tt--help"){
+        else if (command == "tt--h" || command == "--help"){
             allCommands();
             enterCommand();
         }
-            else if (command == "tt--x" || command == "tt--exit"){
-            return 0;
+            else if (command == "tt--x" || command == "--exit"){
             return 0;
         }
         else{
-            std::cout << "\nEnter a valid command. Use tt--h / tt--help to view all commands." 
+            std::cout << "\nEnter a valid command. Use tt--h / --help to view all commands." 
             << "\n";
              enterCommand();
         }
@@ -131,15 +160,20 @@ int enterCommand(){
 
 
 int main(){
-    //Initializing variables 
+    //Initializing
+    if (isLatestVersion == true){
+             versionMessage = ". You are updated to the latest version.";
+                // std::cout << isLatestVersion;
+           } else if(isLatestVersion == false){
+                versionMessage = ". You are on an outdated version. It is recommended you update.";
+           }  
     //START INTRO
 
     // Small Intro
     std::cout << "Welcome to Teacher Tools Light! " << "\n";
 
         //Moved it all to enterCommand()
-        std::cout << "Enter a command or use tt--h" 
-        <<" / tt--help for a list of all commands."
+        std::cout << "Enter a command or use --help for a list of all commands."
                   << '\n';
         enterCommand();
 

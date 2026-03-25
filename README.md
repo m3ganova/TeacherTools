@@ -9,20 +9,22 @@ This version of Teacher Tools is much more optimized and more complex with its o
 
 ### All Commands:  
 
-tt--v / tt--version:View Teacher Tools version.  
+tt--v / --version:View Teacher Tools version.  
 
-tt--h / tt--help: View all commands.  
+tt--h / --help: View all commands.  
 
-tt--x / tt--exit: Close the program.
+tt--x / --exit: Close the program.
 <br>
 
 ### Tools:
 
-tool--gg :  Grade Generator - Outputs a letter depending on the student's percentage grade.  
+--gg / grade :  Grade Generator - Outputs a letter depending on the student's percentage grade.  
 
-tool--mk : Marking Tests - Marks a test and outputs the marks earned and percentage grade.
+--mk / mark : Marking Tests - Marks a test and outputs the marks earned and percentage grade.   
+
+--calc / calculator : Calculator - Calculates your equation.
 <br>
-## Read the blueprint
+## Reading the blueprint
 
 Dash (-) before a point: Cleanly seperate the goals I want to achieve.  
 
